@@ -6,6 +6,7 @@ class HomeController extends Controller
 {
     public function index($request, $response)
     {
-        return '{version: "v1.0"}';
+        $response->getBody()->write('{"info":"Hello ;)","version":"v1.0"}');
+        return $response->withHeader('Content-Type', 'application/json');
     }
 }
