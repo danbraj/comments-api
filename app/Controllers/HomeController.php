@@ -2,7 +2,7 @@
 
 namespace CommentsApi\Controllers;
 
-class HomeController
+class HomeController extends Controller
 {
     public function index($request, $response)
     {
