@@ -8,6 +8,4 @@ $app = new \Slim\App([
     ]
 ]);
 
-$app->get('/', function ($request, $response) {
-    return 'Api';
-});
+require __DIR__ . '/../app/routes.php';

@@ -1,14 +1,19 @@
 {
     "name": "danbraj/danb-comments-api",
     "type": "project",
-    "require": {
-        "slim/slim": "^3.10"
-    },
-    "license": "MIT",
     "authors": [
         {
             "name": "danbraj",
             "email": "danbraj@users.noreply.github.com"
         }
-    ]
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CommentsApi\\": "app"
+        }
+    },
+    "require": {
+        "slim/slim": "^3.10"
+    }
 }
