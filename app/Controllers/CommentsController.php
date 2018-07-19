@@ -10,8 +10,10 @@ class CommentsController extends Controller
     {
         if (isset($args['site_id']) && $args['site_id'] != '')
         {
-            $comments = Comment::where('site_id', $args['site_id'])->get();
-            var_dump($comments);
+            $comments = Comment::where('site_id', $args['site_id'])->get()->toArray();
+            
+            $response->getBody()->write(json_encode($comments));
+            return $response->withHeader('Content-Type', 'application/json');
         }
 
         // $comments = Comment::all();
@@ -32,7 +34,8 @@ class CommentsController extends Controller
                 'email' => $request->getParam('email')
             ]);
 
-            return '{"notice":"Comment added"}';
+            $response->getBody()->write('{"notice":"Comment added"}');
+            return $response->withHeader('Content-Type', 'application/json');
         }
     }
 }
