@@ -5,10 +5,6 @@ use Illuminate\Database\Schema\Blueprint;
 
 class CreateSitesTable extends Migration
 {
-    // public function change()
-    // {
-
-    // }
     public function up()
     {
         $this->schema->create('sites', function (Blueprint $table) {

@@ -6,8 +6,8 @@ use Phinx\Migration\AbstractMigration;
 
 class Migration extends AbstractMigration
 {
-    public $capsule;
-    public $schema;
+    protected $capsule;
+    protected $schema;
     
     public function init()
     {
