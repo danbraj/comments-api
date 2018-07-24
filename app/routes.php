@@ -2,10 +2,12 @@
 
 $app->get('/', 'HomeController:index');
 
-$app->get('/comments/{site_id}', 'CommentsController:index');
+$app->get('/comments', 'CommentsController:findAll');
 
-$app->post('/comments/{site_id}', 'CommentsController:add');
+$app->get('/comments/{site_token}', 'CommentsController:findOne');
 
-// $app->put('/comments/{site_id}/{id}', 'CommentsController:update');
+$app->post('/comments', 'CommentsController:create');
 
-// $app->delete('/comments/{site_id}/{id}', 'CommentsController:delete');
+// $app->put('/comments/{site_token}/{id}', 'CommentsController:update');
+
+// $app->delete('/comments/{site_token}/{id}', 'CommentsController:remove');

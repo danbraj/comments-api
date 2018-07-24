@@ -2,11 +2,16 @@
 
 namespace CommentsApi\Controllers;
 
+use \Psr\Http\Message\ResponseInterface as Response;
+use \Psr\Http\Message\ServerRequestInterface as Request;
+
 class HomeController extends Controller
 {
-    public function index($request, $response)
+    public function index(Request $request, Response $response)
     {
-        $response->getBody()->write('{"info":"Hello ;)","version":"v1.0"}');
-        return $response->withHeader('Content-Type', 'application/json');
+        return $response->withJson([
+            "info" => "Hello ;)",
+            "version" => "v1.0"
+        ], 200);
     }
 }
